@@ -74,9 +74,8 @@ Now, to the code. I ended up writing a small set of python scripts:
   meshlab_grid.py - Particularly happy with how this turned out: this is a script that automates the process of using MeshLab to sample, filter, and meshify (tesselate) each pointcloud, and save it out as an obj. It uses "canopy_script.mlx" as a filter file.
 
   find_trees.py - this is a work in progress, but it is an attempt to run through each pointcloud, and by analysis of point heights and normals, attempt to identify positions of individual trees, so that a tree trunk model can be appropriately placed on the ground.
-  
 
-And with that - I can come back to explain things in more detail later, but I was supposed to be writing the find_trees logic this morning and instead I'm writing words in English, so I'm going to stop here and get back to work.
+find_trees.py makes use of the extremely powerful scipy/spatial/kdtree.py, which implements a K-dimensional binary search tree algorithm. You feed it a cloud of points, and it organizes them into a structure which can search for near neighbors very efficiently.
 
 
 
